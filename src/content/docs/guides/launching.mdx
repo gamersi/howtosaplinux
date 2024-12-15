@@ -1,0 +1,33 @@
+---
+title: Launch Guide
+description: This guide will help you start SAP on Linux after installation.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+if you successfully [installed SAP on Linux](../installation/), this guide will help you start it.
+
+## Launching
+### Step 1: Create Launch Script (Courtesy of Linus)
+```bash
+#!/bin/bash
+
+cd ~/.wine/drive_c/users/$USER/AppData/Roaming/Zebedee/
+wine zebedee.exe -f client.zbd -d &
+PID=$!
+wine ~/.wine/drive_c/Program\ Files/SAP/FrontEnd/SAPGUI/saplogon.exe
+kill -9 $PID
+```
+Write this to a file called `startsap` and make it executable with `chmod +x startsap`.
+
+### Step 2: Launch SAP
+```bash
+./startsap
+```
+
+### Step 3 (Optional): Move the script to a more convenient location
+```bash
+sudo cp ./startsap /usr/local/bin/startsap
+```
+
+If you have done everything correctly, you should now be able to launch and use SAP on Linux. If you have any issues, please refer to the [installation guide](../installation/) or contact us via a github issue.

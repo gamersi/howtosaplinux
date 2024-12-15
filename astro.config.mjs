@@ -4,24 +4,29 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://saponlinux.gamersi.at",
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'How to: SAP on Linux',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/gamersi/saponlinux',
+			},
+			defaultLocale: 'root',
+			locales: {
+				root: {
+					label: 'English',
+					lang: 'en',
+				},
+				de: {
+					label: 'Deutsch',
+					lang: 'de-DE'
+				}
 			},
 			sidebar: [
 				{
 					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+					autogenerate: { directory: 'guides' },
+				}
 			],
 		}),
 	],
