@@ -9,7 +9,7 @@ export default defineConfig({
 		starlight({
 			title: 'How to: SAP on Linux',
 			social: {
-				github: 'https://github.com/gamersi/saponlinux',
+				github: 'https://github.com/gamersi/howtosaplinux',
 			},
 			defaultLocale: 'root',
 			locales: {
