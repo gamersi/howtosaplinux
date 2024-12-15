@@ -1,33 +1,34 @@
 ---
-title: Launch Guide
-description: This guide will help you start SAP on Linux after installation.
+title: Startanweisungen
+description: Dieser Leitfaden hilft Ihnen beim Starten von SAP&reg; auf Linux.
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-if you successfully [installed SAP on Linux](../installation/), this guide will help you start it.
+Dieser Leitfaden hilft Ihnen beim Starten von SAP&reg; auf Linux nach einer erfolgreichen [Installation von SAP&reg; auf Linux](../installation/).
 
-## Launching
-### Step 1: Create Launch Script (Courtesy of Linus)
+## Startanweisungen
+### Schritt 1: Startskript erstellen (Skript von Linus)
 ```bash
 #!/bin/bash
 
 cd ~/.wine/drive_c/users/$USER/AppData/Roaming/Zebedee/
 wine zebedee.exe -f client.zbd -d &
 PID=$!
-wine ~/.wine/drive_c/Program\ Files/SAP/FrontEnd/SAPGUI/saplogon.exe
+wine ~/.wine/drive_c/Program\ Files/SAP&reg;/FrontEnd/SAPGUI/saplogon.exe
 kill -9 $PID
 ```
-Write this to a file called `startsap` and make it executable with `chmod +x startsap`.
+Schreiben Sie dies in eine Datei namens `startsap` mittels eines Editors wie `vim` oder `nano` und machen Sie sie mit `chmod +x startsap` ausführbar.
 
-### Step 2: Launch SAP
+### Schritt 2: SAP&reg; starten
 ```bash
 ./startsap
 ```
 
-### Step 3 (Optional): Move the script to a more convenient location
+### Schritt 3 (Optional): Verschieben des Skripts in einen bequemeren Ort
 ```bash
 sudo cp ./startsap /usr/local/bin/startsap
 ```
 
-If you have done everything correctly, you should now be able to launch and use SAP on Linux. If you have any issues, please refer to the [installation guide](../installation/) or contact us via a github issue.
+Wenn Sie alles richtig gemacht haben, sollten Sie jetzt in der Lage sein, SAP&reg; auf Linux zu starten und zu verwenden.  
+Wenn Sie Probleme haben, lesen Sie bitte die [Installationsanleitung](../installation/) oder kontaktieren Sie uns über ein [Github Issue](https://github.com/gamersi/howtosaplinux/issues/new).

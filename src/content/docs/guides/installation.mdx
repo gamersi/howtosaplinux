@@ -1,26 +1,26 @@
 ---
 title: Installation Guide
-description: This guide will help you get started with proper SAP installation on Linux.
+description: This guide will help you get started with proper SAP&reg; installation on Linux.
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-This guide will help you get started with proper SAP installation on Linux.
+This guide will help you get started with proper SAP&reg; installation on Linux.
 
 ## Motivation
-We needed to install SAP on Linux and we wanted to document the process.  
-Although there is a official linux version of the SAP GUI, it is completely different from the Windows version and it is not as user friendly.
+We needed to install SAP&reg; on Linux and we wanted to document the process.  
+Although there is a official linux version of the SAP&reg; GUI, it is completely different from the Windows version and it is not as user friendly.
 We also had problems with the wireguard VPN only supporting one user at a time, so we had to use the SAPTUNNEL instead. Another reason for using it with Wine.
 
 ## Credits
 - [Linus](https://github.com/critiqalfish) for finding out the whole solution
 - [Simon](https://github.com/gamersi) for testing, polishing and creating this site
-- [SAP](https://www.sap.com/) for creating the software
+- [SAP&reg;](https://www.sap.com/) for creating the software
 
 ## Prerequisites
 - A Linux installation (We used Arch Linux, this guide supports Arch, Debian/Ubuntu and Fedora)
 - Internet connection
-- Somewhere you can download the SAP GUI and SAPTUNNEL from
+- Somewhere you can download the SAP&reg; GUI and SAPTUNNEL from
 - A few MB of free space
 - A bit of time (Wine dependencies can take a while to install)
 
@@ -67,7 +67,7 @@ wine saptunnel-setup.exe
 ```
 Type in your name, email and the Zeebedee Key when asked.
 
-### Step 5: Download & Install SAP GUI
+### Step 5: Download & Install SAP&reg; GUI
 ```bash
 wine sapgui-setup.exe
 ```
@@ -76,7 +76,7 @@ The installation will say it failed (with 4 errors), but that is just an error w
 The installation has actually succeeded.
 :::
 
-### Step 6: Configure SAP GUI (Default theme may not work)
+### Step 6: Configure SAP&reg; GUI (Default theme may not work)
 ```bash
-wine reg add "HKEY_CURRENT_USER\Software\SAP\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
+wine reg add "HKEY_CURRENT_USER\Software\SAP&reg;\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
 ```

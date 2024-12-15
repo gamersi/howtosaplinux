@@ -1,31 +1,31 @@
 ---
-title: Installation Guide
-description: This guide will help you get started with proper SAP installation on Linux.
+title: Installationsanleitung
+description: Dieser Leitfaden hilft Ihnen bei der ordnungsgemäßen Installation von SAP&reg; unter Linux.
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
-This guide will help you get started with proper SAP installation on Linux.
+Dieser Leitfaden hilft Ihnen bei der ordnungsgemäßen Installation von SAP&reg; unter Linux.
 
 ## Motivation
-We needed to install SAP on Linux and we wanted to document the process.  
-Although there is a official linux version of the SAP GUI, it is completely different from the Windows version and it is not as user friendly.
-We also had problems with the wireguard VPN only supporting one user at a time, so we had to use the SAPTUNNEL instead. Another reason for using it with Wine.
+Wir mussten SAP&reg; auf Linux installieren und wollten den Prozess dokumentieren.  
+Obwohl es eine offizielle Linux-Version der SAP&reg; GUI gibt, ist sie völlig anders als die Windows-Version und nicht so benutzerfreundlich.  
+Wir hatten auch Probleme mit dem Wireguard VPN, das nur einen Benutzer gleichzeitig unterstützt, daher mussten wir stattdessen den SAPTUNNEL verwenden. Ein weiterer Grund, es mit Wine zu verwenden.
 
-## Credits
-- [Linus](https://github.com/critiqalfish) for finding out the whole solution
-- [Simon](https://github.com/gamersi) for testing, polishing and creating this site
-- [SAP](https://www.sap.com/) for creating the ~~most user-unfriendly~~ best ERP system in the world
+## Danksagungen
+- [Linus](https://github.com/critiqalfish) für das Entdecken der gesamten Lösung
+- [Simon](https://github.com/gamersi) für das Testen des Guides, Verbesserung und der Erstellung dieser Website
+- [SAP&reg;](https://www.sap.com/) für die Erstellung der Software
 
-## Prerequisites
-- A Linux installation (We used Arch Linux, this guide supports Arch, Debian/Ubuntu and Fedora)
-- Internet connection
-- Somewhere you can download the SAP GUI and SAPTUNNEL from
-- A few MB of free space
-- A bit of time (Wine dependencies can take a while to install)
+## Voraussetzungen
+- Eine Linux-Installation (Wir haben Arch Linux verwendet, dieser Leitfaden unterstützt Arch, Debian/Ubuntu und Fedora)
+- Eine Internetverbindung
+- Einen Ort, an dem Sie die SAP&reg; GUI und SAPTUNNEL herunterladen können
+- Ein paar MB freien Speicherplatz
+- Ein wenig Zeit (Wine-Dependencies können eine Weile dauern, um zu installieren)
 
-## Installation Process
-### Step 1: Install Wine
+## Installationsprozess
+### Schritt 1: Wine installieren
 <Tabs syncKey="distro">
   <TabItem label="Arch Linux">
     ```bash
@@ -44,38 +44,39 @@ We also had problems with the wireguard VPN only supporting one user at a time, 
   </TabItem>
 </Tabs>
 
-### Step 2: Create a 32-bit Wine prefix
+### Schritt 2: Erstellen eines 32-Bit-Wine-Prefix
 ```bash
 WINEARCH=win32 wineboot
 ```
 
-### Step 3: Install needed DLLs and switch wine to Windows 10 (it will be in Windows 7 by default)
+### Schritt 3: Installieren der benötigten DLLs und Windows 10 für Wine aktivieren
 ```bash
 winetricks -q vcrun2013 vb6run wsh57 ie8 mfc40 mfc42 dotnet40 gdiplus corefonts
 ```
-This can take a while, so be patient. If it ever gets stuck, you can restart.  
-If Archive.org gets DDOSed again, you are out of luck. *(That definitely didn't happen to us)*
-and then run:
+Dies kann eine Weile dauern, also haben Sie Geduld. Wenn es stecken bleibt, können Sie neu starten.
+Wenn Archive.org erneut DDOSed wird, haben Sie Pech. *(Das ist uns definitiv nicht passiert)*
+und dann:
 ```bash
 winetricks -q win10
 ```
-You can use the `winecfg` command for that as well.
+Sie können auch den Befehl `winecfg` verwenden, um die Windows-Version zu ändern.
 
-### Step 4: Download & Install SAPTUNNEL
+### Schritt 4: SAPTUNNEL herunterladen und installieren
 ```bash
 wine saptunnel-setup.exe
 ```
-Type in your name, email and the Zeebedee Key when asked.
+Wenn Sie gefragt werden, geben Sie Ihren Namen, Ihre E-Mail-Adresse und den Zeebedee-Schlüssel ein.
 
-## Step 5: Download & Install SAP GUI
+### Schritt 5: SAP&reg; GUI herunterladen und installieren
 ```bash
 wine sapgui-setup.exe
 ```
 :::note[Info]
-The installation will say it failed (with 4 errors), but that is just an error with links. The installation actually succeeded.
+Die Installation wird sagen, dass sie fehlgeschlagen ist (mit **4 Fehlern**), aber das ist nur ein Fehler mit Verknüpfungen.  
+Die Installation sollte tatsächlich erfolgreich sein.
 :::
 
-## Step 6: Configure SAP GUI (Default theme may not work)
+### Schritt 6: SAP&reg; GUI konfigurieren (Das Standard-Design funktioniert möglicherweise nicht)
 ```bash
-wine reg add "HKEY_CURRENT_USER\Software\SAP\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
+wine reg add "HKEY_CURRENT_USER\Software\SAP&reg;\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
 ```

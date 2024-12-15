@@ -7,7 +7,7 @@ export default defineConfig({
 	site: "https://saponlinux.gamersi.at",
 	integrations: [
 		starlight({
-			title: 'How to: SAP on Linux',
+			title: 'How to: SAP® on Linux',
 			social: {
 				github: 'https://github.com/gamersi/howtosaplinux',
 			},
