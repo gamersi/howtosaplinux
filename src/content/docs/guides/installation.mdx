@@ -77,7 +77,8 @@ The installation will say it failed (with 4 errors), but that is just an error w
 The installation has actually succeeded.
 :::
 
-### Step 6: Configure SAP&reg; GUI (Default theme may not work)
+### Step 6: Change SAP&reg; GUI default theme
 ```bash
 wine reg add "HKEY_CURRENT_USER\Software\SAP&reg;\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
 ```
+This is just a more convenient way of changing the default theme to the only usable one.
