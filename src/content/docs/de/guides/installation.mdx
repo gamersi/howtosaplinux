@@ -77,7 +77,8 @@ Die Installation wird sagen, dass sie fehlgeschlagen ist (mit **4 Fehlern**), ab
 Die Installation sollte tatsächlich erfolgreich sein.
 :::
 
-### Schritt 6: SAP&reg; GUI konfigurieren (Das Standard-Design funktioniert möglicherweise nicht)
+### Schritt 6: SAP&reg; GUI Standard-Design konfigurieren
 ```bash
 wine reg add "HKEY_CURRENT_USER\Software\SAP&reg;\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
 ```
+Das ist lediglich eine angenehmere Methode um das Design vor dem Start zum einzig nutzbaren zu ändern.
