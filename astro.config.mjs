@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightPdf from './integration/starlight-pdf';
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +29,12 @@ export default defineConfig({
 					autogenerate: { directory: 'guides' },
 				}
 			],
+		}),
+		starlightPdf({
+			outputDir: 'dist/pdf',
+			format: 'a4',
+			defaultLocale: '',
+			locales: ['de', '']
 		}),
 	],
 });
