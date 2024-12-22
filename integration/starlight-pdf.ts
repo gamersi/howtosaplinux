@@ -149,7 +149,7 @@ export default function starlightPdf(options: PdfOptions = {}): AstroIntegration
                 format,
                 printBackground: true,
                 margin: {
-                  top: '1.5cm',
+                  top: '1cm',
                   right: '0',
                   bottom: '0',
                   left: '0'
