@@ -40,6 +40,10 @@ jobs:
       - name: Install dependencies
         run: pnpm i
         working-directory: ${{ env.BUILD_PATH }}
+      - name: Setup Puppeteer
+        run: |
+          sudo apt-get install -yq libgbm-dev libnss3
+          pnpx puppeteer browsers install chrome
       - name: Build with Astro
         run: |
           pnpx astro build \
