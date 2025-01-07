@@ -55,8 +55,8 @@ WINEARCH=win32 wineboot
 winetricks -q vcrun2013 vb6run wsh57 ie8 mfc40 mfc42 dotnet40 gdiplus corefonts
 ```
 Dies kann eine Weile dauern, also haben Sie Geduld. Wenn es stecken bleibt, können Sie neu starten.
-Wenn Archive.org erneut DDOSed wird, haben Sie Pech. *(Das ist uns definitiv nicht passiert)*
-und dann:
+Wenn Archive.org erneut DDOSed wird, haben Sie Pech. *(Das ist uns definitiv nicht passiert)*  
+Anschließend die Windows-Version auf Windows 10 ändern:
 ```bash
 winetricks -q win10
 ```
@@ -79,6 +79,6 @@ Die Installation sollte tatsächlich erfolgreich sein.
 
 ### Schritt 6: SAP&reg; GUI Standard-Design konfigurieren
 ```bash
-wine reg add "HKEY_CURRENT_USER\Software\SAP&reg;\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
+wine reg add "HKEY_CURRENT_USER\Software\SAP\General\Appearance" -v "SelectedTheme" -t REG_DWORD -d "0x00000100" -f
 ```
 Das ist lediglich eine angenehmere Methode um das Design vor dem Start zum einzig Nutzbaren zu ändern.
