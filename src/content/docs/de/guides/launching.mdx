@@ -15,10 +15,11 @@ Dieser Leitfaden hilft Ihnen beim Starten von SAP&reg; auf Linux nach einer erfo
 cd ~/.wine/drive_c/users/$USER/AppData/Roaming/Zebedee/
 wine zebedee.exe -f client.zbd -d &
 PID=$!
-wine ~/.wine/drive_c/Program\ Files/SAP&reg;/FrontEnd/SAPGUI/saplogon.exe
+wine ~/.wine/drive_c/Program\ Files/SAP/FrontEnd/SAPGUI/saplogon.exe
 kill -9 $PID
 ```
 Schreiben Sie dies in eine Datei namens `startsap` mittels eines Editors wie `vim` oder `nano` und machen Sie sie mit `chmod +x startsap` ausführbar.
+Sollten Sie einen eigenen wineprefix verwenden, müssen Sie den Pfad entsprechend anpassen.
 
 ### Schritt 2: SAP&reg; starten
 ```bash

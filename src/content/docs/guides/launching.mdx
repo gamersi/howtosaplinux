@@ -15,10 +15,11 @@ If you successfully [installed SAP&reg; on Linux](../installation/), this guide 
 cd ~/.wine/drive_c/users/$USER/AppData/Roaming/Zebedee/
 wine zebedee.exe -f client.zbd -d &
 PID=$!
-wine ~/.wine/drive_c/Program\ Files/SAP&reg;/FrontEnd/SAPGUI/saplogon.exe
+wine ~/.wine/drive_c/Program\ Files/SAP/FrontEnd/SAPGUI/saplogon.exe
 kill -9 $PID
 ```
 Write this to a file called `startsap` and make it executable with `chmod +x startsap`.
+In case you are using a custom wineprefix, you will need to adjust the path accordingly.
 
 ### Step 2: Launch SAP&reg;
 ```bash
