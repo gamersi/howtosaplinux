@@ -52,7 +52,7 @@ WINEARCH=win32 wineboot
 
 ### Step 3: Install needed DLLs and switch wine to Windows 10 (it will be in Windows 7 by default)
 ```bash
-winetricks -q vcrun2013 vb6run wsh57 ie8 mfc40 mfc42 dotnet40 gdiplus corefonts
+winetricks -q urlmon vcrun2013 vb6run wsh57 ie8 mfc40 mfc42 dotnet40 gdiplus corefonts
 ```
 This can take a while, so be patient. If it ever gets stuck, you can restart.  
 If Archive.org gets DDOSed again, you are out of luck. *(That definitely didn't happen to us)*  
